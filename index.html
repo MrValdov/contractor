@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contractor Branding Kits | Freckles Customs</title>
+  <style>
+    :root {
+      --bg: #f7f1ea;
+      --card: #fffaf5;
+      --ink: #1f1b18;
+      --muted: #6f6259;
+      --line: rgba(31, 27, 24, 0.14);
+      --brown: #8b5e3c;
+      --brown-dark: #5f3b24;
+      --gold: #c59b5f;
+      --green: #596b4a;
+      --rose: #b46d6d;
+      --shadow: 0 24px 70px rgba(66, 42, 25, 0.14);
+      --radius: 28px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(197, 155, 95, 0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(180, 109, 109, 0.16), transparent 32%),
+        linear-gradient(135deg, #fbf5ef, var(--bg));
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(34px, 6vw, 72px);
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(31, 27, 24, 0.95), rgba(95, 59, 36, 0.92)),
+        radial-gradient(circle at 80% 20%, rgba(197, 155, 95, 0.35), transparent 40%);
+      color: #fff8ef;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(197, 155, 95, 0.12);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 13px;
+      color: #f6dcae;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 790px;
+      font-size: clamp(2.1rem, 6vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: rgba(255, 248, 239, 0.82);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      margin-bottom: 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 860px;
+    }
+
+    .hero-chip {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255, 248, 239, 0.92);
+      font-size: 0.94rem;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      margin: 44px 0 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0;
+    }
+
+    .kits {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .kit {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: rgba(255, 250, 245, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 46px rgba(66, 42, 25, 0.08);
+    }
+
+    .kit.featured {
+      border: 2px solid rgba(139, 94, 60, 0.42);
+      transform: translateY(-8px);
+      background: #fffaf3;
+    }
+
+    .tag {
+      align-self: flex-start;
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(89, 107, 74, 0.12);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .kit h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      color: var(--brown-dark);
+      margin-bottom: 14px;
+    }
+
+    .price small {
+      font-size: 0.95rem;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0 0 18px;
+    }
+
+    li { margin-bottom: 9px; }
+
+    .best-for {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255, 250, 245, 0.88);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 46px rgba(66, 42, 25, 0.07);
+    }
+
+    .panel.dark {
+      background: linear-gradient(135deg, #241b15, #5f3b24);
+      color: #fff8ef;
+    }
+
+    .panel.dark p,
+    .panel.dark li {
+      color: rgba(255, 248, 239, 0.78);
+    }
+
+    .logo-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .logo-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo-row:last-child { border-bottom: 0; }
+
+    .logo-row strong { display: block; }
+
+    .logo-row span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .logo-price {
+      font-weight: 800;
+      color: var(--brown-dark);
+      white-space: nowrap;
+    }
+
+    .combo {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .combo-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+    }
+
+    .combo-card strong {
+      display: block;
+      color: var(--brown-dark);
+      font-size: 1.15rem;
+    }
+
+    .highlight {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(197, 155, 95, 0.16);
+      border: 1px solid rgba(197, 155, 95, 0.28);
+    }
+
+    .cta {
+      margin-top: 36px;
+      padding: 30px;
+      border-radius: 32px;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta h2 { margin-bottom: 8px; }
+
+    .cta-box {
+      padding: 20px;
+      border-radius: 24px;
+      background: var(--ink);
+      color: #fff8ef;
+      text-align: center;
+    }
+
+    .cta-box strong {
+      display: block;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .fine-print {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 24px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .social-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 250, 245, 0.88);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 46px rgba(66, 42, 25, 0.07);
+    }
+
+    .social-card.featured-soft {
+      border: 2px solid rgba(89, 107, 74, 0.35);
+      background: #fffaf3;
+    }
+
+    .social-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .social-price {
+      font-size: 2.25rem;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.055em;
+      color: var(--brown-dark);
+      margin: 8px 0 14px;
+    }
+
+    .social-price small {
+      font-size: 0.9rem;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .fit-note {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .bundle-stack {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .bundle-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+    }
+
+    .bundle-card strong {
+      display: block;
+      color: var(--brown-dark);
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+
+    .bundle-card .bundle-total {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--brown-dark);
+      letter-spacing: -0.04em;
+    }
+
+    .boundary-note {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(89, 107, 74, 0.10);
+      border: 1px solid rgba(89, 107, 74, 0.18);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .top-band {
+      width: 100%;
+      background: #1f1b18;
+      color: #fff8ef;
+      border-bottom: 1px solid rgba(197, 155, 95, 0.34);
+    }
+
+    .top-band-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f6dcae;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .home-link:hover {
+      color: #fff8ef;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .top-band-note {
+      color: rgba(255, 248, 239, 0.72);
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .kits,
+      .two-col,
+      .combo,
+      .social-grid,
+      .bundle-stack,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .kit.featured { transform: none; }
+      .section-head { display: block; }
+      .top-band-inner { align-items: flex-start; flex-direction: column; }
+      .top-band-note { text-align: left; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .top-band { display: none; }
+      .page { width: 100%; padding: 0; }
+      .hero, .kit, .panel, .cta { box-shadow: none; }
+      .hero { border-radius: 0; }
+      .kit.featured { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-band">
+    <div class="top-band-inner">
+      <a class="home-link" href="https://www.frecklescustoms.com/" aria-label="Return to Freckles Customs home page">← Home</a>
+      <span class="top-band-note">Freckles Customs contractor branding menu</span>
+    </div>
+  </div>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Freckles Customs • Business Branding</div>
+      <h1>Contractor Branding Kits</h1>
+      <p>
+        A complete field-ready branding system designed to help contractors look professional on job sites,
+        hand out polished estimates, collect reviews, and stay memorable after every project.
+      </p>
+      <div class="hero-grid">
+        <div class="hero-chip">Branded shirts for job-site trust</div>
+        <div class="hero-chip">QR review cards to build reputation</div>
+        <div class="hero-chip">Invoice/estimate sheets for professional follow-up</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Package Options</h2>
+          <p>Choose the kit that fits your current stage. Logo design can be added separately if needed.</p>
+        </div>
+      </div>
+
+      <div class="kits">
+        <article class="kit">
+          <span class="tag">Starter</span>
+          <h3>Option A — Starter Contractor Kit</h3>
+          <div class="price">$279</div>
+          <ul>
+            <li>6 branded shirts</li>
+            <li>250 business cards</li>
+            <li>100 QR review cards</li>
+            <li>2 vehicle/window decals</li>
+            <li>50 invoice/estimate sheets</li>
+            <li>Basic QR setup</li>
+          </ul>
+          <div class="best-for"><strong>Good for:</strong> getting started with a clean, professional presence.</div>
+        </article>
+
+        <article class="kit featured">
+          <span class="tag">Best Value</span>
+          <h3>Option B — Professional Contractor Kit</h3>
+          <div class="price">$449</div>
+          <ul>
+            <li>8 branded shirts</li>
+            <li>500 business cards</li>
+            <li>150 QR review cards</li>
+            <li>100 thank-you cards</li>
+            <li>4 vehicle/window decals</li>
+            <li>100 invoice/estimate sheets</li>
+            <li>Basic social media promo graphic</li>
+          </ul>
+          <div class="best-for"><strong>Best for:</strong> contractors who want a complete job-site, customer follow-up, and review system.</div>
+        </article>
+
+        <article class="kit">
+          <span class="tag">Growth</span>
+          <h3>Option C — Growth Contractor Kit</h3>
+          <div class="price">$699</div>
+          <ul>
+            <li>12 branded shirts</li>
+            <li>500 business cards</li>
+            <li>250 QR review cards</li>
+            <li>250 thank-you cards</li>
+            <li>4 vehicle/window decals</li>
+            <li>12 branded mugs</li>
+            <li>150 invoice/estimate sheets</li>
+            <li>3 social media promo graphics</li>
+            <li>Reorder template saved for future orders</li>
+          </ul>
+          <div class="best-for"><strong>Best for:</strong> established contractors who want a stronger customer-facing brand system.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <article class="panel">
+        <h2>Logo Design Options</h2>
+        <p>If you already have a usable logo, we can build the kit around it. If you need a new logo or your file needs cleanup, choose one of the options below.</p>
+
+        <div class="logo-options">
+          <div class="logo-row">
+            <div>
+              <strong>Existing Logo Setup / File Prep</strong>
+              <span>Logo cleanup, resizing, color adjustment, and production preparation.</span>
+            </div>
+            <div class="logo-price">$25–$45</div>
+          </div>
+
+          <div class="logo-row">
+            <div>
+              <strong>Basic Text Logo</strong>
+              <span>Clean business-name logo with simple typography and 1 revision.</span>
+            </div>
+            <div class="logo-price">$75</div>
+          </div>
+
+          <div class="logo-row">
+            <div>
+              <strong>Standard Contractor Logo</strong>
+              <span>Recommended option. Includes contractor-style logo concept, 2 options, and 2 revisions.</span>
+            </div>
+            <div class="logo-price">$150</div>
+          </div>
+
+          <div class="logo-row">
+            <div>
+              <strong>Premium Brand Logo Pack</strong>
+              <span>Main logo, horizontal version, social profile version, color palette, and basic usage guide.</span>
+            </div>
+            <div class="logo-price">$250</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel dark">
+        <h2>Recommended Complete Setup</h2>
+        <p>The strongest starting point is the Professional Contractor Kit with the Standard Contractor Logo.</p>
+        <div class="highlight">
+          <h3>Professional Kit + Standard Contractor Logo</h3>
+          <p style="font-size: 2.3rem; font-weight: 800; margin-bottom: 4px; color: #fff8ef;">$599 total</p>
+          <p style="margin-bottom: 0;">Includes logo design, shirts, business cards, QR review cards, thank-you cards, decals, invoice/estimate sheets, and one social promo graphic.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Invoice / Estimate Sheets</h2>
+          <p>These are designed for contractors who need to leave customers with a clear, branded estimate or invoice after a visit.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <article class="panel">
+          <h3>Recommended Sheet Sections</h3>
+          <ul>
+            <li>Logo, business name, phone number, and contact information</li>
+            <li>Customer name, phone, email, and job address</li>
+            <li>Service checklist</li>
+            <li>Line-item area for materials, labor, quantity, and total</li>
+            <li>Deposit, balance due, payment terms, and customer signature area</li>
+            <li>Optional QR code for payment, contact, website, or reviews</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Standalone Form Add-Ons</h3>
+          <div class="combo">
+            <div class="combo-card">
+              <strong>$35</strong>
+              <span>50 basic invoice/estimate sheets</span>
+            </div>
+            <div class="combo-card">
+              <strong>$55</strong>
+              <span>100 branded invoice/estimate sheets</span>
+            </div>
+            <div class="combo-card">
+              <strong>$95</strong>
+              <span>Premium form pack: 100 invoice/estimate sheets, 50 work-order sheets, and 50 thank-you/review cards</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Add Online Presence Setup</h2>
+          <p>Your branding should not stop at shirts, cards, decals, and invoice sheets. When customers scan your QR code or look up your business, your social media page should match the same professional image.</p>
+        </div>
+      </div>
+
+      <div class="social-grid">
+        <article class="social-card">
+          <span class="tag">Add-On</span>
+          <h3>Social Setup Add-On</h3>
+          <div class="social-price">$99</div>
+          <ul>
+            <li>Facebook or Instagram business page setup/cleanup</li>
+            <li>Logo/profile photo upload</li>
+            <li>Short business bio</li>
+            <li>Contact button setup</li>
+            <li>Service category setup</li>
+            <li>QR/social link setup</li>
+            <li>1 branded promo graphic</li>
+          </ul>
+          <div class="fit-note"><strong>Good for:</strong> getting one page ready with clean business information.</div>
+        </article>
+
+        <article class="social-card featured-soft">
+          <span class="tag">Best Add-On</span>
+          <h3>Social Starter Upgrade</h3>
+          <div class="social-price">$79</div>
+          <ul>
+            <li>Available with Option B or Option C</li>
+            <li>Social profile setup/cleanup</li>
+            <li>Bio/about text</li>
+            <li>Contact button setup</li>
+            <li>QR/social link setup</li>
+            <li>3 total branded starter graphics</li>
+          </ul>
+          <div class="fit-note"><strong>Best for:</strong> turning the Professional Kit into a complete field + online presence.</div>
+        </article>
+
+        <article class="social-card">
+          <span class="tag">Launch Pack</span>
+          <h3>Contractor Digital Launch Pack</h3>
+          <div class="social-price">$149</div>
+          <ul>
+            <li>Facebook or Instagram setup/cleanup</li>
+            <li>Logo/profile image</li>
+            <li>Cover image or banner</li>
+            <li>Contractor bio/about section</li>
+            <li>Contact and service area setup</li>
+            <li>6 branded graphics</li>
+            <li>QR code connected to page, reviews, or contact link</li>
+            <li>Basic posting guidance</li>
+          </ul>
+          <div class="fit-note"><strong>Best for:</strong> a stronger online launch with more branded starter content.</div>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top: 34px;">
+        <div>
+          <h2>Optional Monthly Social Media Support</h2>
+          <p>For contractors who want ongoing branded posts using their own job photos, project updates, reviews, and service promotions.</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <article class="panel">
+          <h3>Light Social Maintenance</h3>
+          <div class="social-price">$99<small>/month</small></div>
+          <ul>
+            <li>4 branded posts per month</li>
+            <li>Customer provides job photos</li>
+            <li>Basic captions</li>
+            <li>Simple call-to-action</li>
+            <li>One revision per month</li>
+            <li>Posts delivered as files or scheduled if access is provided</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Contractor Social Growth</h3>
+          <div class="social-price">$199<small>/month</small></div>
+          <ul>
+            <li>8 branded posts per month</li>
+            <li>Customer provides job photos/videos</li>
+            <li>Basic captions</li>
+            <li>Review/testimonial post</li>
+            <li>Monthly service promo post</li>
+            <li>Basic local hashtag/service-area text</li>
+            <li>One monthly content refresh</li>
+            <li>Up to two revisions per month</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="panel" style="margin-top: 18px;">
+        <h2>Recommended Offer Stack</h2>
+        <p>These bundles give a clear path from professional field branding to a complete field + online presence.</p>
+        <div class="bundle-stack">
+          <div class="bundle-card">
+            <strong>Best Physical Branding Package</strong>
+            <span>Professional Contractor Kit + Standard Contractor Logo</span>
+            <span class="bundle-total">$599</span>
+          </div>
+          <div class="bundle-card">
+            <strong>Best Complete Launch Package</strong>
+            <span>Professional Contractor Kit + Standard Contractor Logo + Social Starter Upgrade</span>
+            <span class="bundle-total">$678</span>
+          </div>
+          <div class="bundle-card">
+            <strong>Best Growth Package</strong>
+            <span>Growth Contractor Kit + Standard Contractor Logo + Contractor Digital Launch Pack</span>
+            <span class="bundle-total">$999</span>
+          </div>
+        </div>
+        <div class="boundary-note">
+          Social media setup includes basic profile setup or cleanup. Customer must provide business information, service areas, photos if available, and access to the selected platform if posting or setup is requested. Monthly social media support does not include paid ads, professional photography, advanced video editing, inbox/message replies, or guaranteed leads unless quoted separately.
+        </div>
+      </article>
+
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>What this kit helps you do</h2>
+        <p>
+          Show up professionally, make your business easier to remember, leave polished estimates,
+          collect reviews, and keep your branding consistent across shirts, cards, decals, invoices, and social media.
+        </p>
+      </div>
+      <div class="cta-box">
+        <span>Most Recommended Starting Point</span>
+        <strong>Option B + Logo</strong>
+        <span>$599 total</span>
+        <span style="display:block; margin-top: 8px; color: rgba(255,248,239,0.72); font-size: 0.86rem;">Add Social Starter Upgrade for $678 total</span>
+      </div>
+    </section>
+
+    <p class="fine-print">
+      Notes: Final pricing may vary depending on artwork complexity, shirt type, decal size, material availability, and requested revisions.
+      Claims such as licensed, bonded, insured, warranty, or permit-included should only be printed when confirmed by the business owner.
+      Sales tax may apply to physical products.
+    </p>
+
+    <footer class="footer">
+      Freckles Customs • Custom branding materials for small businesses
+    </footer>
+  </main>
+</body>
+</html>
